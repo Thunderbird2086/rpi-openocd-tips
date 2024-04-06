@@ -68,37 +68,42 @@ reset halt
   > flash read_bank 0 bmp-bank0.bin
   nRF52840-xxAA(build code: D0) 1024kB Flash, 256kB RAM
   wrote 1048576 bytes to file bmp-bank0.bin from flash bank 0 at offset 0x00000000 in 8.368806s (122.359 KiB/s)
-
-  > flash verify_bank 1 bmp-bank1.bin
-  read 4096 bytes from file bmp-bank1.bin and flash bank 1 at offset 0x00000000 in 0.076019s (52.618 KiB/s)
-  contents match
   
   > flash read_bank 1 bmp-bank1.bin
   wrote 4096 bytes to file bmp-bank1.bin from flash bank 1 at offset 0x00000000 in 0.068702s (58.222 KiB/s)
+  ```
 
+* verfy dumped memeories  
+  ```
   > flash verify_bank 0 bmp-bank0.bin
   read 1048576 bytes from file bmp-bank0.bin and flash bank 0 at offset 0x00000000 in 8.366240s (122.397 KiB/s)
   contents match
 
+  > flash verify_bank 1 bmp-bank1.bin
+  read 4096 bytes from file bmp-bank1.bin and flash bank 1 at offset 0x00000000 in 0.076019s (52.618 KiB/s)
+  contents match
   ```
+  
 ### write firmware
-* clear flash memory 
+* clear flash memories
   ```
   > nrf5 mass_erase                   
   Mass erase completed.
   ```
 
-* write flash memory 
+* write flash memories
   ```
   > flash write_bank 0 bmp-bank0.bin  
   wrote 1048576 bytes from file bmp-bank0.bin to flash bank 0 at offset 0x00000000 in 7.820391s (130.940 KiB/s)
 
+  > flash write_bank 1 bmp-bank1.bin    
+  wrote 4096 bytes from file bmp-bank1.bin to flash bank 1 at offset 0x00000000 in 0.096388s (41.499 KiB/s)
+  ```
+* verify flash memories 
+  ```
   > flash verify_bank 0 bmp-bank0.bin 
   read 1048576 bytes from file bmp-bank0.bin and flash bank 0 at offset 0x00000000 in 8.369584s (122.348 KiB/s)
   contents match
-
-  > flash write_bank 1 bmp-bank1.bin    
-  wrote 4096 bytes from file bmp-bank1.bin to flash bank 1 at offset 0x00000000 in 0.096388s (41.499 KiB/s)
 
   > flash verify_bank 1 bmp-bank1.bin 
   read 4096 bytes from file bmp-bank1.bin and flash bank 1 at offset 0x00000000 in 0.081877s (48.854 KiB/s)
