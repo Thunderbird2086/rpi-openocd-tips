@@ -38,7 +38,7 @@ bcm2835gpio speed_coeffs 236181 60
 # adapter gpio tdo -chip 0 9
 
 # Each of the SWD lines need a gpio number set: swclk swdio
-# Header pin numbers: 23 22
+# Header pin numbers: 22 18
 adapter gpio swclk -chip 0 25
 adapter gpio swdio -chip 0 24
 
